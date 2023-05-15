@@ -1,0 +1,5 @@
+/* onde ficam os css mais gerais, é o primeiro a ser carregado */
+
+* {
+    margin: 0;
+} /*reseta as margens padrões dos navegadores */
