@@ -1,18 +1,30 @@
-import { useState } from 'react'
+import { React } from 'react'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import {Grid} from '@material-ui/core'; 
 import Home from './paginas/home/Home';
-import Navbar from './components/estaticos/navbar/Navbar'
-import Footer from './components/estaticos/footer/Footer'
-import './App.css'
+import Navbar from './components/estaticos/navbar/Navbar';
+import Footer from './components/estaticos/footer/Footer';
+import Login from './paginas/login/Login';
+import './App.css';
 
-//<>: fragment, substitui o <div> 
 // o grid aplica responsividade, através de colunas. xs > extra small, md > medium
 function App() {
     return (
+        // fragment, substitui o <div> 
         <> 
+            <BrowserRouter>
             <Navbar />
-            <Home />
+            <div style={{ minHeight: '100vh' }}>
+                <Routes>
+                    <Route path='/' element={<Login/>} />
+                    {/* na rota /login, carregue o elemento login */}
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/home' element={<Home />} />
+                </Routes>
+            </div>
             <Footer />
+            </BrowserRouter>
+            
         </>
     )
 }
