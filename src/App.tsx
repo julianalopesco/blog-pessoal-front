@@ -5,7 +5,9 @@ import Home from './paginas/home/Home';
 import Navbar from './components/estaticos/navbar/Navbar';
 import Footer from './components/estaticos/footer/Footer';
 import Login from './paginas/login/Login';
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import './App.css';
+
 
 // o grid aplica responsividade, através de colunas. xs > extra small, md > medium
 function App() {
@@ -20,6 +22,7 @@ function App() {
                     {/* na rota /login, carregue o elemento login */}
                     <Route path='/login' element={<Login />} />
                     <Route path='/home' element={<Home />} />
+                    <Route path='/cadastrousuario' element={<CadastroUsuario />} />
                 </Routes>
             </div>
             <Footer />
