@@ -14,18 +14,22 @@ function Navbar() {
                             Clube do Livro
                         </Typography>
                     </Box>
-
+                    
                     <Box display="flex" justifyContent="start">
+                        <Link to='/home'>
                         <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
                                 home
                             </Typography>
                         </Box>
+                        </Link>
+                        <Link to='/postagens'>
                         <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
                                 postagens
                             </Typography>
                         </Box>
+                        </Link>
                         <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
                                 temas

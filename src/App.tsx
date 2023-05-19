@@ -7,6 +7,7 @@ import Footer from './components/estaticos/footer/Footer';
 import Login from './paginas/login/Login';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import './App.css';
+import ListaPostagens from './components/postagens/listaPostagens/ListaPostagens';
 
 
 // o grid aplica responsividade, através de colunas. xs > extra small, md > medium
@@ -23,6 +24,7 @@ function App() {
                     <Route path='/login' element={<Login />} />
                     <Route path='/home' element={<Home />} />
                     <Route path='/cadastrousuario' element={<CadastroUsuario />} />
+                    <Route path='/postagens' element={<ListaPostagens />} />
                 </Routes>
             </div>
             <Footer />

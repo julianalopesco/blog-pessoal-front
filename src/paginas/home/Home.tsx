@@ -3,6 +3,7 @@ import './Home.css';
 import Box from '@mui/material/Box';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import {Grid, Button, Typography} from '@material-ui/core';
+import ListaPostagens from '../../components/postagens/listaPostagens/ListaPostagens';
 
 
 function Home() {
@@ -29,6 +30,8 @@ function Home() {
                 <Grid xs={12} className='postagens'>
                 </Grid>
             </Grid>
+
+            <ListaPostagens/>
        </div>
     )
 }
