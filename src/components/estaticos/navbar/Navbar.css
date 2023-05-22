@@ -1,8 +1,17 @@
-.cursor{
-    cursor: pointer;
+.txtNavbar {
+    justify-content: flex-end !important;
     color: white;
 }
 
-.text-decorator-none{
-    text-decoration: none;
+.linkNavbar{
+    text-decoration: none !important;
+    padding: 8px;
+}
+
+.navbar {
+    background-color: rgb(41, 47, 54) !important
+    }
+
+.linkNavbar:hover {
+    background-color: black;
 }

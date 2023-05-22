@@ -1,0 +1,20 @@
+.tabPost {
+    background-color: rgb(41, 47, 54) !important;
+}
+
+.txtPost {
+    color: white !important; 
+}
+
+.txtValue:hover {
+    background-color: black;
+}
+
+.txtSobre {
+    text-align: justify;
+    margin-bottom: 1rem;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.2rem;
+}

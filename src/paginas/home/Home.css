@@ -1,5 +1,5 @@
 .caixa {
-    background-color: #3F51B5;
+    background-color: #404A56ff;
 }
 
 .titulo{
@@ -7,9 +7,13 @@
     font-weight: bold !important;
 }
 
+.subtitulo{
+    color: white !important;
+    font-weight: regular !important;
+}
 .botao {
     border-color: white !important;
-    background-color: #3F51B5;
+    background-color: #404A56ff;
     color: white !important;
 }
 

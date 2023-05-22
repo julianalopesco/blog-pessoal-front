@@ -1,0 +1,11 @@
+.linkIcon:hover {
+    background-color: black;
+    }
+
+.footer {
+    background-color: rgb(41, 47, 54) !important;
+}
+
+.linkIcon {
+    font-size: 0.5rem;
+} 

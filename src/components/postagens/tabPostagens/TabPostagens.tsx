@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { AppBar, Tab, Tabs, Typography} from '@material-ui/core';
-import {Box} from '@mui/material';
+import {Box, Grid} from '@mui/material';
 import { TabContext, TabPanel } from '@material-ui/lab';
 import ListaPostagens from '../listaPostagens/ListaPostagens';
 import './TabPostagens.css';
@@ -17,10 +17,10 @@ function TabPostagens() {
     <>
       {/* container das abas */}
       <TabContext value={value}>
-        <AppBar position="static">
-          <Tabs centered indicatorColor="secondary" onChange={handleChange}> 
-            <Tab label="Todas as postagens" value="1"/>
-            <Tab label="Sobre-nós" value="2" />
+        <AppBar position="static"  className='tabPost'>
+          <Tabs centered indicatorColor="secondary" onChange={handleChange}  className='txtPost'> 
+            <Tab label="Todas as postagens" value="1" className='txtValue'/>
+            <Tab label="Sobre" value="2"className='txtValue'/>
           </Tabs>
         </AppBar>
         {/* o valor define para onde as tabs irão direcionar */}
@@ -29,10 +29,16 @@ function TabPostagens() {
             <ListaPostagens />
           </Box>
         </TabPanel>
-        <TabPanel value="2">
-          <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre-nós</Typography>
-          <Typography variant="body1" gutterBottom color="textPrimary" align="justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos ut eveniet natus totam et, voluptate dicta tempore alias, odio nobis non eius cupiditate minima inventore pariatur! Ipsum itaque consectetur voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo velit consequuntur suscipit fugiat, nam quis quod quaerat veritatis et, vel ratione beatae, facere neque! Quo animi porro voluptate saepe deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore adipisci, officia aut quidem dolorum deserunt iure dolorem doloribus velit nobis quas consequatur at ullam odit, nesciunt est nulla nihil excepturi!</Typography>
-        </TabPanel>
+        <Box display="flex" justifyContent="center" className="txtSobre" style={{ width: '50%', margin: '0 auto' }}>
+          <TabPanel value="2">
+            <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre o projeto:</Typography>
+            <Typography variant="body1" gutterBottom color="textPrimary">
+                <p className="txtSobre">Clube do Livro é um projeto de Blog Pessoal realizado dentro do bootcamp da generation, durante o terceiro módulo</p>
+                <p className="txtSobre">Esse projeto une o backend, onde foram utilizados Java e o SpringBoot Framework, gerenciamento de banco de dados com CRUD e requisições http, com o Front-End, que une JavaScript, CSS e HTML para criar páginas estilizadas, funcionais e responsivas, capazes também de consumir a api de back-end</p>
+                <p className="txtSobre">Clube do livro foi escolhido como tema do projeto por ser um assunto que interessa muito a desenvolvedora, Juliana Lopes, e as resenhas foram escritas por ela também </p> 
+            </Typography>
+          </TabPanel>
+        </Box>
       </TabContext>
     </>
   );

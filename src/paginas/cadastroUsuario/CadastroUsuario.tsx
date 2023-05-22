@@ -64,7 +64,7 @@ function CadastroUsuario(){
                     <form onSubmit={onSubmit}>
                             <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textosCadastro'> Cadastrar </Typography>
                             <TextField value={user.nome} onChange={(e:ChangeEvent<HTMLInputElement>)=>updatedModel(e)} id='nome' label='Nome' variant='outlined' name='nome' margin='normal' fullWidth />
-                            <TextField value={user.usuario} onChange={(e:ChangeEvent<HTMLInputElement>)=>updatedModel(e)} id='usuario' label='Usuario' variant='outlined' name='usuario' margin='normal' fullWidth type='password' />
+                            <TextField value={user.usuario} onChange={(e:ChangeEvent<HTMLInputElement>)=>updatedModel(e)} id='usuario' label='Usuario' variant='outlined' name='usuario' margin='normal' />
                             <TextField value={user.senha} onChange={(e:ChangeEvent<HTMLInputElement>)=>updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' fullWidth type='password' />
                             <TextField value={confirmarSenha} onChange={(e:ChangeEvent<HTMLInputElement>)=>confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar Senha' variant='outlined' name='confirmarSenha' margin='normal' fullWidth type='password' />
                             {/* o link precisa ser o do react-router-dom */}
