@@ -30,11 +30,13 @@ function Navbar() {
                             </Typography>
                         </Box>
                         </Link>
+                        <Link to='/temas' className='linkNavbar'>
                         <Box mx={1} className='txtNavbar'>
                             <Typography variant="h6" color="inherit">
                                 TEMAS
                             </Typography>
                         </Box>
+                        </Link>
                         <Box mx={1} className='txtNavbar' style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
                                 CADASTRAR TEMA

@@ -33,9 +33,9 @@ function TabPostagens() {
           <TabPanel value="2">
             <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre o projeto:</Typography>
             <Typography variant="body1" gutterBottom color="textPrimary">
-                <p className="txtSobre">Clube do Livro é um projeto de Blog Pessoal realizado dentro do bootcamp da generation, durante o terceiro módulo</p>
-                <p className="txtSobre">Esse projeto une o backend, onde foram utilizados Java e o SpringBoot Framework, gerenciamento de banco de dados com CRUD e requisições http, com o Front-End, que une JavaScript, CSS e HTML para criar páginas estilizadas, funcionais e responsivas, capazes também de consumir a api de back-end</p>
-                <p className="txtSobre">Clube do livro foi escolhido como tema do projeto por ser um assunto que interessa muito a desenvolvedora, Juliana Lopes, e as resenhas foram escritas por ela também </p> 
+                <p className="txtSobre">Clube do Livro é um projeto de Blog Pessoal realizado dentro do bootcamp da generation, durante o terceiro módulo.</p>
+                <p className="txtSobre">Esse projeto une o backend, onde foram utilizados Java e o SpringBoot Framework, gerenciamento de banco de dados com CRUD e requisições http, com o Front-End, que une JavaScript, CSS e HTML para criar páginas estilizadas, funcionais e responsivas, capazes também de consumir a api de back-end.</p>
+                <p className="txtSobre">Clube do livro foi escolhido como tema do projeto por ser um assunto que interessa muito a desenvolvedora, Juliana Lopes, e as resenhas foram escritas por ela também. </p> 
             </Typography>
           </TabPanel>
         </Box>
