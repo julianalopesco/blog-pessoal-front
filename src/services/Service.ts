@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-    baseURL: 'https://linkblog.onrender.com/'
+    baseURL: 'https://clubedolivro.onrender.com/'
 })
 
     export const cadastroUsuario = async(url: any, dados: any, setDado: any) => { //setdado: objeto json contendo os dados do usuário e token

@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
 import './Home.css';
 import Box from '@mui/material/Box';
-import AddBoxIcon from '@mui/icons-material/AddBox';
 import {Grid, Button, Typography} from '@material-ui/core';
 import TabPostagens from '../../components/postagens/tabPostagens/TabPostagens';
-import ListaPostagens from '../../components/postagens/listaPostagens/ListaPostagens';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
-import { busca } from '../../services/Service';
 import { useNavigate, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../store/tokens/tokensReducer';
 
 
 function Home() {
     let navigate = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
     
     useEffect(() => {
         if (token == "") {

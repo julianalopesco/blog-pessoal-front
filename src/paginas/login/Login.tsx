@@ -3,15 +3,17 @@ import './Login.css';
 import {Grid, Box, Typography, TextField, Button} from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import UsuarioLogin from '../../model/UsuarioLogin';
-import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Service';
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../store/tokens/action';
 
 //com o grid container, os elementos já ficam um abaixo do outro por padrão 
 //do xs pra cima, o grid aparece como o definido 
 function Login() {
 
     let history = useNavigate(); //função do react que navega uma pessoa de uma página pra outra. cria variável para navegação
-    const [token,setToken] = useLocalStorage('token');
+    const dispatch = useDispatch();
+    const [token,setToken] = useState('');
     const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>( //armazena o estado no navegador
         //usuarioLoging: para acessar a informação do state
         //setUsuarioLogin: função para alterar a info que está no state
@@ -26,6 +28,8 @@ function Login() {
         }
         )
 
+        console.log(`aq2ui: ${token}`)
+
         //atualizar a model com o valor que o usuário digitar no input 
         function updatedModel(e: ChangeEvent<HTMLInputElement>) { //e:evento 
                 setUsuarioLogin({
@@ -36,8 +40,9 @@ function Login() {
 
         //responsável por fazer o ciclo de vida do componente 
         useEffect(()=>{
-            if(token != '') //verifica se o token é diferente de vazio, ou seja, foi preenchido
-            history('/home')
+            if(token !== '') //verifica se o token é diferente de vazio, ou seja, foi preenchido
+                dispatch(addToken(token))
+                history('/home')
         }, [token])//passa o token como parâmetro do effect
 
         //fazer o envio das formações 
