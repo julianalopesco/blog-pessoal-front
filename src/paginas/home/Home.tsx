@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import {Grid, Button, Typography} from '@material-ui/core';
 import TabPostagens from '../../components/postagens/tabPostagens/TabPostagens';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
 
@@ -15,13 +15,13 @@ function Home() {
         (state) => state.tokens
     );
     
-    useEffect(() => {
-        if (token == "") {
-            alert("Você precisa estar logado")
-            navigate("/login")
+    // useEffect(() => {
+    //     if (token == "") {
+    //         alert("Você precisa estar logado")
+    //         navigate("/login")
     
-        }
-    }, [token])
+    //     }
+    // }, [token])
     
     return (
         // a função retorna apenas um elemento, portanto usa-se as divs/containers
@@ -38,7 +38,9 @@ function Home() {
                             <Box marginRight={1}>
                                 <ModalPostagem/>
                             </Box>
-                            <Button variant="outlined" className='botao'>Ver Postagens</Button>
+                            <Link to='/postagens'>
+                                <Button variant="outlined" className='botao'>Ver Postagens</Button>
+                            </Link>
                         </Box>
                     </Grid>
                     <Grid item xs={6} >

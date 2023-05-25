@@ -4,13 +4,17 @@ import {Card, CardActions, CardContent, Button, Typography } from '@material-ui/
 import {Box} from '@mui/material';
 import './ListaTemas.css';
 import Tema from '../../../model/Tema';
-import useLocalStorage from 'react-use-localstorage';
 import {useNavigate} from 'react-router-dom'; 
 import { busca } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function ListaTemas() {
   const [temas, setTemas] = useState<Tema[]>([]) //para inicializar os temas dentro de um array
-  const [token, setToken] = useLocalStorage('token'); //captura o token
+
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+    );
   let navigate = useNavigate(); //faz o redirect da página
 
   async function getTemas() {

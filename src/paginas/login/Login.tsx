@@ -14,10 +14,7 @@ function Login() {
     let history = useNavigate(); //função do react que navega uma pessoa de uma página pra outra. cria variável para navegação
     const dispatch = useDispatch();
     const [token,setToken] = useState('');
-    const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>( //armazena o estado no navegador
-        //usuarioLoging: para acessar a informação do state
-        //setUsuarioLogin: função para alterar a info que está no state
-        // \/estado inicial do UsuarioLogin/state
+    const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>( 
         {
             id: 0,
             nome: '',
@@ -28,7 +25,6 @@ function Login() {
         }
         )
 
-        console.log(`aq2ui: ${token}`)
 
         //atualizar a model com o valor que o usuário digitar no input 
         function updatedModel(e: ChangeEvent<HTMLInputElement>) { //e:evento 
@@ -40,10 +36,10 @@ function Login() {
 
         //responsável por fazer o ciclo de vida do componente 
         useEffect(()=>{
-            if(token !== '') //verifica se o token é diferente de vazio, ou seja, foi preenchido
+            if(token !== ''){ //verifica se o token é diferente de vazio, ou seja, foi preenchido
                 dispatch(addToken(token))
                 history('/home')
-        }, [token])//passa o token como parâmetro do effect
+}}, [token])//passa o token como parâmetro do effect
 
         //fazer o envio das formações 
         async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
