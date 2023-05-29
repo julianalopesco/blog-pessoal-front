@@ -21,7 +21,7 @@ function Navbar() {
     
     function goLogout(){
         dispatch(addToken('')); //exclui o token no logout
-        toast.success('🦄 Wow so easy!', {
+        toast.info('Usuário foi deslogado', {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: false,
