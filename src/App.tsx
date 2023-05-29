@@ -15,14 +15,18 @@ import CadastroPost from './components/postagens/cadastroPost/cadastroPost';
 import CadastroTema from './components/temas/cadastroTema/CadastroTema';
 import { Provider } from 'react-redux';
 import store from './store/store';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-    // o grid aplica responsividade, através de colunas. xs > extra small, md > medium
-    //faz a conexão com os componentes do redux
-    // <>: fragment, substitui o <div> 
+    //
+
 function App() {
 
     return (
+            // faz a conexão com os componentes do redux
             <Provider store={store}>
+            {/* Biblioteca de alert  */}
+            <ToastContainer /> 
             <BrowserRouter>
                 <Navbar />
                     <div style={{ minHeight: '100vh' }}>

@@ -8,6 +8,7 @@ import {useNavigate} from 'react-router-dom';
 import { busca } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function ListaTemas() {
   const [temas, setTemas] = useState<Tema[]>([]) //para inicializar os temas dentro de um array
@@ -30,7 +31,16 @@ function ListaTemas() {
       // a parte do catch, vai receber qlquer mensagem de erro que chegue, e caso a mensagem tenha um 403 no seu texto
       // significa que o token já expirou. Iremos alertar o usuário sobre isso, apagar o token do navegador, e levá-lo para a tela de login
       if(error.toString().includes('403')) {
-        alert('O seu token expirou, logue novamente')
+        toast.success('🦄 Wow so easy!', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
         setToken('')
         navigate('/login')
       }
@@ -43,7 +53,16 @@ function ListaTemas() {
 
   useEffect(() => {
     if(token === ''){ 
-      alert('Ta tirando né??? sem token não rola')
+      toast.success('🦄 Wow so easy!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       navigate('/login')
     }
   }, [])

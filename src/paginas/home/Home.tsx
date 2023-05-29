@@ -7,6 +7,7 @@ import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostage
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 
 function Home() {
@@ -15,13 +16,22 @@ function Home() {
         (state) => state.tokens
     );
     
-    // useEffect(() => {
-    //     if (token == "") {
-    //         alert("Você precisa estar logado")
-    //         navigate("/login")
+    useEffect(() => {
+        if (token == "") {
+            toast.error('🦄 Wow so easy!', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                });
+            navigate("/login")
     
-    //     }
-    // }, [token])
+        }
+    }, [token])
     
     return (
         // a função retorna apenas um elemento, portanto usa-se as divs/containers

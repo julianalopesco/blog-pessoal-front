@@ -6,6 +6,7 @@ import UsuarioLogin from '../../model/UsuarioLogin';
 import { login } from '../../services/Service';
 import { useDispatch } from 'react-redux';
 import { addToken } from '../../store/tokens/action';
+import { toast } from 'react-toastify';
 
 //com o grid container, os elementos já ficam um abaixo do outro por padrão 
 //do xs pra cima, o grid aparece como o definido 
@@ -47,9 +48,28 @@ function Login() {
                 try {//tentativa de execução
                     await login(`/usuarios/logar`,usuarioLogin, setToken)
 
-                    alert("Usuário logado com sucesso!");
+                    // alert("Usuário logado com sucesso!");
+                    toast.success('🦄 Wow so easy!', {
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        });
                 } catch{//onde o erro será relatado e tratado
-                    alert('Dados do usuário inconsistentes. Erro ao logar');
+                    toast.success('🦄 Wow so easy!', {
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        });
                 }
         }
 
