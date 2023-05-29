@@ -6,6 +6,7 @@ import {Typography, Grid } from '@material-ui/core';
 import {Box} from '@mui/material';
 import './Footer.css';
 
+//footerComponent
 
 function Footer() {
         return (
