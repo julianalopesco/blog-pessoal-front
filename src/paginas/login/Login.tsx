@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import UsuarioLogin from '../../model/UsuarioLogin';
 import { login } from '../../services/Service';
 import { useDispatch } from 'react-redux';
-import { addToken } from '../../store/tokens/action';
+import { addId, addToken } from '../../store/tokens/action';
 import { toast } from 'react-toastify';
 
 //com o grid container, os elementos já ficam um abaixo do outro por padrão 
@@ -16,6 +16,17 @@ function Login() {
     const dispatch = useDispatch();
     const [token,setToken] = useState('');
     const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>( 
+        {
+            id: 0,
+            nome: '',
+            usuario: '',
+            foto:'',
+            senha: '', 
+            token: ''
+        }
+        )
+
+    const [respUserLogin, setRespUserLogin] = useState<UsuarioLogin>( 
         {
             id: 0,
             nome: '',
@@ -46,10 +57,10 @@ function Login() {
         async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
                 e.preventDefault(); //impede que o botão atualize a tela 
                 try {//tentativa de execução
-                    await login(`/usuarios/logar`,usuarioLogin, setToken)
+                    await login(`/usuarios/logar`,usuarioLogin, setRespUserLogin)
 
                     // alert("Usuário logado com sucesso!");
-                    toast.success('🦄 Wow so easy!', {
+                    toast.success('Usuário logado com sucesso!', {
                         position: "top-center",
                         autoClose: 5000,
                         hideProgressBar: false,
@@ -60,7 +71,7 @@ function Login() {
                         theme: "colored",
                         });
                 } catch{//onde o erro será relatado e tratado
-                    toast.success('🦄 Wow so easy!', {
+                    toast.error('Erro ao logar, confira as informações', {
                         position: "top-center",
                         autoClose: 5000,
                         hideProgressBar: false,
@@ -72,6 +83,15 @@ function Login() {
                         });
                 }
         }
+        //pega o token e o id do jason e guarda no redux
+
+        useEffect(()=> {
+            if(respUserLogin.token !== ''){
+                dispatch(addToken(respUserLogin.token))
+                dispatch(addId(respUserLogin.id.toString()))
+                history('/home');
+            }
+        })
 
     return (
         <>

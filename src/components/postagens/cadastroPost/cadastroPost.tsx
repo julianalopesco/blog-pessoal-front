@@ -8,6 +8,7 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
+import Usuario from '../../../model/Usuario';
 
 function CadastroPost() {
     let navigate = useNavigate();
@@ -43,15 +44,33 @@ function CadastroPost() {
         id: 0,
         titulo: '',
         texto: '',
-        tema: null
+        data: '',
+        tema: null,
+        usuario: null
     })
 
+    //busca o id que está no redux
+    const userId = useSelector<TokenState, TokenState ['id'] >(
+        (state) => state.id
+    )
+    
+    //state que controla o usuário que estará na postagem
+    const [usuario, setUsuario] = useState<Usuario>({
+        id: +userId,
+        nome: '',
+        usuario:'',
+        senha:'',
+        foto:''
+    })
+
+    //verifica o tema
     useEffect(() => { 
         setPostagem({
             ...postagem,
-            tema: tema
+            tema: tema,
+            usuario: usuario
         })
-    }, [tema])
+    }, [tema]);
 
     useEffect(() => {
         getTemas()
@@ -112,7 +131,7 @@ function CadastroPost() {
                 }
             })
             
-            toast.success('🦄 Wow so easy!', {
+            toast.success('Post cadastrado com sucesso!', {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,

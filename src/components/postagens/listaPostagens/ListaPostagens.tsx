@@ -8,6 +8,7 @@ import './ListaPostagens.css';
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
@@ -65,6 +66,9 @@ function ListaPostagem() {
                 </Typography>
                 <Typography variant="body2" component="p">
                   {post.tema?.descricao}
+                </Typography>
+                <Typography variant="body2" component="p">
+                    Postado por: {post.usuario?.nome}
                 </Typography>
               </CardContent>
               <CardActions>
