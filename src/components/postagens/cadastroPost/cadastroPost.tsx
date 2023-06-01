@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
-import './CadastroPost.css';
+import './cadastroPost.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import Tema from '../../../model/Tema';
 import Postagem from '../../../model/Postagem';

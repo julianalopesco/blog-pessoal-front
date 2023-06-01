@@ -1,3 +1,4 @@
+import Postagem from "./Postagem";
 //model para o componente de cadastro
 interface Usuario{
     id: number;

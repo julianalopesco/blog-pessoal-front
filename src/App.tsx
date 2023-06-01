@@ -1,5 +1,5 @@
-import { React } from 'react'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import  React  from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {Grid} from '@material-ui/core'; 
 import Home from './paginas/home/Home';
 import Navbar from './components/estaticos/navbar/Navbar';

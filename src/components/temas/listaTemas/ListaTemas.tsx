@@ -41,7 +41,6 @@ function ListaTemas() {
           progress: undefined,
           theme: "colored",
           });
-        setToken('')
         navigate('/login')
       }
     }

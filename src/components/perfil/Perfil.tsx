@@ -2,7 +2,7 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
 import { Usuario } from '../../model/Usuario';
-import { buscaId, put } from '../../services/service';
+import { buscaId, put } from '../../services/Service';
 import './Perfil.css';
 
 import {
